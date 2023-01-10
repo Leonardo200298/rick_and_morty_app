@@ -1,10 +1,14 @@
 import Card from './Card';
 import styles from './cards.module.css';
-
+import styled from 'styled-components';
+const DivCard = styled.div`
+   border:solid collapse 22px lightblue;
+ 
+`;
 export default function Cards(props) {
-   console.log(styles)
+
    const { characters } = props;
-   return (<div className={styles.fondo}>
+   return (<DivCard className={styles.fondo}>
       {characters.map((element)=>{
          return (
             <Card name={element.name}
@@ -14,5 +18,5 @@ export default function Cards(props) {
             onClose={() => window.alert('Emulamos que se cierra la card ' + element.name)}/>
          )
       })}
-   </div>);
+   </DivCard>);
 }
