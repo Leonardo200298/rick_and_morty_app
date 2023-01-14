@@ -1,6 +1,8 @@
 import styles from './cards.module.css';
 
+
 export default function Cards(props) {
+
    const { character } = props;
 
 
@@ -39,4 +41,7 @@ export default function Cards(props) {
 
       {/* <h1>{character[0].name}</h1> */}
    </div>);
+
+
+
 }

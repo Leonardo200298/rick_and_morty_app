@@ -1,7 +1,10 @@
 .letra{
     font-style: oblique;
-    color: springgreen;
+    color: gold;
 }
 .fondo{
-    background-color: hotpink;
+ 
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+
 }
