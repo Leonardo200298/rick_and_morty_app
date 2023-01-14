@@ -1,28 +1,36 @@
 import styles from './cards.module.css';
 
 export default function Cards(props) {
-   console.log(props)
    const { character } = props;
+
+
    return (<div className={styles.fondo}>
 
 
       {
-         
-         character.map((element) => {
-            return (
-               <div>
-                  <h2>{element.name}</h2>
-                  <h3>{element.species}</h3>
 
+         character.map((element, index) => {
 
+            {
 
-                  <p>{element.gender}</p>
-                  <img src={element.image} alt="" />
+               return (
+                  <div key={index}>
+                     <h1>{element[0].name}</h1>
+                     <h3>{element[0].species}</h3>
+                     <img src={element[0].image} alt={element[0].name} />
+                     <p>{element[0].gender}</p>
+                     <br />
+                     <h1>{element[1].name}</h1>
+                     <h3>{element[1].species}</h3>
+                     <img src={element[1].image} alt={element[1].name} />
+                     <p>{element[1].gender}</p>
+                     <br />
 
-
-               </div>
-            )
+                  </div>
+               )
+            }
          })
+
       }
 
 

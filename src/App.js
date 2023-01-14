@@ -12,7 +12,7 @@ function App() {
     gender: "",
     image: ""
   }]);
-  useEffect(() => {
+  useEffect( () => {
 
     setCharacters({
       ...characters,
@@ -21,9 +21,13 @@ function App() {
       gender: characters.gender,
       image: characters.image
     })
+    return ()=>{
+        console.log("estoy en un callback")
+      }
+    
   }, [])
 
-
+  console.log(character)
   const handleInputSearch = (event) => {
 
   }
