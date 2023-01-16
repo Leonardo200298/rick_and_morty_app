@@ -1,50 +1,28 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css';
+import getCharacters from './helpers/getCharacters';
 
 import Cards from './components/Cards.jsx'
 import SearchBar from './components/SearchBar.jsx'
-import characters from './data.js'
+
 
 function App() {
-  const [character, setCharacters] = useState([{
-    name: "",
-    species: "",
-    gender: "",
-    image: ""
-  }]);
-  useEffect( () => {
+  const [characters, setCharacters] = useState();
 
-    setCharacters({
-      ...characters,
-      name: characters.name,
-      species: characters.species,
-      gender: characters.gender,
-      image: characters.image
-    })
-    return ()=>{
-        console.log("estoy en un callback")
-      }
-    
-  }, [])
-
-  console.log(character)
-  const handleInputSearch = (event) => {
-
+  const getCharactersApp = () => {
+    getCharacters()
+      .then((data) => {
+        setCharacters(data)
+      })
   }
+  useEffect(() => {
+
+    getCharactersApp();
+  }, [])
+  console.log(characters)
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <div>
-        <SearchBar
-          handleInputSearch={handleInputSearch}
-        />
-      </div>
-
-      <hr />
-      <div>
-        <Cards
-          character={character}
-        />
-      </div>
+      <Cards characters={characters} />
     </div>
   )
 }
