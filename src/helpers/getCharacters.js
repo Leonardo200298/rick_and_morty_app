@@ -4,7 +4,8 @@
         const res = await fetch(url);
         const ress = await res.json();
         const {results} = await ress;
-        return results.slice(0,6);
+  
+        return results;
     }catch(error){
         console.log(error);
     }

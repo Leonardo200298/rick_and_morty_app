@@ -10,7 +10,7 @@ export default function Cards(props) {
          <div key={elem.id}>
             <h1>{elem.name}</h1>
             <img src={elem.image} alt={elem.name} />
-            
+            <p>Specie: {elem.species}</p>
          </div>
          )
         

@@ -3,7 +3,16 @@
     justify-content: space-around;
     flex-direction: row;
     list-style:  none;
-    background-color: #bbbbbb;
+    background-color: #c7c5c5;
     border-radius: 5px;
     padding: 10px;
+}
+ul:hover{
+    background-color: #d6d3d3;
+
+}
+li:hover{
+    background-color: #b6b1b1;
+    border-radius: 3px;
+  
 }
