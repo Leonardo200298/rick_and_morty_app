@@ -1,0 +1,9 @@
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    list-style:  none;
+    background-color: #bbbbbb;
+    border-radius: 5px;
+    padding: 10px;
+}

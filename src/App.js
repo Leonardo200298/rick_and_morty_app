@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import getCharacters from './helpers/getCharacters';
-import Cards from './components/Cards/Cards.jsx'
-import Navbar from 'react-bootstrap/Navbar'
+import NavBar from './components/NavBar/NavBar';
+import Cards from './components/Cards/Cards.jsx';
+import Episodes from './components/Episodes/Episodes';
+import About from './components/About/About';
+import Login from './components/Login/Login'
+import {Routes , Route } from 'react-router-dom';
+
 
 
 function App() {
@@ -15,14 +20,18 @@ function App() {
       })
   }
   useEffect(() => {
-
     getCharactersApp();
   }, [])
- 
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <Navbar/>
-      <Cards characters={characters} />
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<Cards characters={characters} />}/>
+        <Route path='/episodes' element={<Episodes/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/login' element={<Login/>}/>
+      </Routes>
+  {/*     <Cards characters={characters} /> */}
     </div>
   )
 }
