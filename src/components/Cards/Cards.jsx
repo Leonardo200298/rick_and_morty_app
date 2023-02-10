@@ -1,20 +1,13 @@
-import styles from './cards.module.css';
+import React from 'react'
 
-
-export default function Cards(props) {
-   const { characters } = props;
-  
-   return (<div className={styles.fondo}>
-      {!characters ? <p>loading...</p> : characters.map(elem=>{
-         return ( 
-         <div key={elem.id}>
-            <h1>{elem.name}</h1>
-            <img src={elem.image} alt={elem.name} />
-            <p>Specie: {elem.species}</p>
-         </div>
-         )
-        
-      })}
-   </div>);
-
+export default function Cards({key,name,img,specie}) {
+  return (
+    
+        <div key={key}>
+            <h1>{name}</h1>
+            <img src={img} alt={name} />
+            <p>{specie}</p>
+         </div> 
+    
+  )
 }

@@ -1,15 +1,15 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
-/* eslint-disable no-undef */
-import React from "react";
-import styles from "./navBar.module.css";
-import { Link } from "react-router-dom"
-import SearchBar from "../SearchBar/SearchBar";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SearchBar from '../searcheBar/SearchBar';
+import styles from './navBar.module.css';
 
 
-export default function NavBar(props) {
+export default function NavBar() {
   return (
+
     <div>
-      <nav className={styles.menu}>
+        
+        <nav className={styles.menu}>
         <ul>
             <Link to='/'>
                 <li>Home</li>
@@ -24,10 +24,11 @@ export default function NavBar(props) {
             </Link>
           
           <li>
-            <SearchBar characters={props}/>
+            <SearchBar />
           </li>
         </ul>
       </nav>
+       
     </div>
-  );
+  )
 }

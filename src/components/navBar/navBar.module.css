@@ -1,3 +1,5 @@
+
+
 .menu ul{
     display: flex;
     justify-content: space-around;
@@ -10,9 +12,4 @@
 ul:hover{
     background-color: #d6d3d3;
 
-}
-li:hover{
-    background-color: #b6b1b1;
-    border-radius: 3px;
-  
 }
