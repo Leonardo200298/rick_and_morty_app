@@ -1,5 +1,20 @@
-import {ALL_CHARACTERS} from './action-types';
+import {ALL_CHARACTERS, ALL_CHARACTERS_COPY, FILTER } from './action-types';
 import axios from 'axios';
+
+export const getAllCharactersCopy = ()=>{
+    return function (dispatch){
+        axios.get("https://rickandmortyapi.com/api/character/")
+        .then((response)=>{
+            dispatch({
+                type:ALL_CHARACTERS_COPY,
+                payload:response.data.results
+            })
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
+}
 
 export const getAllCharacters = (name=null)=>{
     return function (dispatch){

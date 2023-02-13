@@ -3,21 +3,23 @@ import React from 'react';
 import Cards from '../Cards/Cards'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCharacters } from '../../redux/actions/actions';
-import styles from './home.module.css'
-/* import {Routes , Route } from 'react-router-dom'; */
+import { getAllCharactersCopy } from '../../redux/actions/actions';
+import styles from './home.module.css';
 
 export default function Character() {
 const dispatch = useDispatch();
 const charactersState = useSelector((state)=>{
-    return state.allCharacters
+    return state.allCharacters;
 })
 
+
 useEffect(() => {
-    dispatch(getAllCharacters())
-}, [charactersState]) 
+    /* dispatch(getAllCharacters()); */
+    dispatch(getAllCharactersCopy());
+}, []) 
   return (
     <div className={styles.fondo}>
+      
         {charactersState&&charactersState.map((elem)=>{
           return (  <Cards 
           key={elem.id}
