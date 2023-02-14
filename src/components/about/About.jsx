@@ -1,7 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 export default function About() {
   return (
-    <div>Hola soy el about de la app</div>
+    <div>
+      <p>
+        Esta es una aplicacion creada en react js con motivos didacticos, creada en 2023 y sera actualizada a lo largo del tiempo.
+        Desde ya muchas gracias y feliz estadia en el universo.
+      </p>
+    </div>
   )
 }

@@ -1,4 +1,4 @@
-import { ALL_CHARACTERS, ALL_CHARACTERS_COPY } from "./actions/action-types";
+import { ALL_CHARACTERS, ALL_CHARACTERS_COPY,FILTER } from "./actions/action-types";
 
 const initialState = {
   allCharacters: [],
@@ -9,7 +9,6 @@ const initialState = {
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ALL_CHARACTERS:
-      console.log(payload)
       return {
         ...state,
         allCharacters: payload,
@@ -22,6 +21,13 @@ const reducer = (state = initialState, { type, payload }) => {
         allCharacters: state.allCharactersCopy
 
       };
+    case FILTER:
+      const {allCharactersCopy} = state;
+      const filterChar = allCharactersCopy.filter((elem)=>elem.species === payload);
+      return {
+        ...state,
+        allCharacters:filterChar
+      }  
     default:
       return { ...state };
   }

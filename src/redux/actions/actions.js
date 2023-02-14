@@ -1,6 +1,17 @@
 import {ALL_CHARACTERS, ALL_CHARACTERS_COPY, FILTER } from './action-types';
 import axios from 'axios';
 
+export const filterBySpecie = (specie) =>{
+    return function (dispatch){
+        dispatch({
+            type:FILTER,
+            payload:specie
+        })
+    }
+}
+
+
+
 export const getAllCharactersCopy = ()=>{
     return function (dispatch){
         axios.get("https://rickandmortyapi.com/api/character/")
