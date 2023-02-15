@@ -5,11 +5,11 @@
     justify-content: space-around;
     flex-direction: row;
     list-style:  none;
-    background-color: #e4d4e4;
+    background-color: #caaaca;
     border-radius: 5px;
     padding: 10px;
 }
 ul:hover{
-    background-color: #eabfe2;
+    background-color: #eacce5;
     list-style: none;
 }

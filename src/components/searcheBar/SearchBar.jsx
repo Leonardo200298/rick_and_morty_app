@@ -1,29 +1,31 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllCharacters } from '../../redux/actions/actions';
 import Cards from "../Cards/Cards";
+
 
 export default function SearchBar() {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
-
+  const error = useSelector((state) => {
+    return state.error;
+  })
 
   useEffect(() => {
     handleSearch();
-   
+
   }, []);
 
   const handleSubmit = (e) => {
-    /* [e.target.name] = e.target.value; */
     setInput(e.target.value);
-    
+
   };
 
   const handleSearch = () => {
     dispatch(getAllCharacters(input));
     setInput("")
-   
+
   };
   return (
     <div>
@@ -37,7 +39,7 @@ export default function SearchBar() {
       <button onClick={handleSearch} type="submit">
         search
       </button>
-      
+
       <div>
         <Cards />
 

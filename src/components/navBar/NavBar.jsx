@@ -5,6 +5,7 @@ import { getAllCharactersCopy } from '../../redux/actions/actions';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import FilterBySpecie from '../filterBySpecie/FilterBySpecie';
+import OrderBy from '../orderBy/OrderBy';
 
 export default function NavBar() {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ export default function NavBar() {
             <SearchBar />
           </li>
           <FilterBySpecie />
+          <OrderBy/>
         </ul>
       </nav>
     </div>

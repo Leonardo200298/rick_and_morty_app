@@ -11,7 +11,7 @@ export default function FilterBySpecie() {
   return (
     <div>
         <select onChange={handlerFilter}>
-            <option value="filter" disabled="disabled">filter by specie</option>
+            <option value="filter" disabled>filter by specie</option>
             <option value="Human">Human</option>
             <option value="Alien">Alien</option>
            {/*  <option value="Cronenberg">Cronenberg</option>

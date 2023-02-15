@@ -1,5 +1,14 @@
-import {ALL_CHARACTERS, ALL_CHARACTERS_COPY, FILTER } from './action-types';
+import {ALL_CHARACTERS, ALL_CHARACTERS_COPY, FILTER, ORDERBY } from './action-types';
 import axios from 'axios';
+
+export const orderBy = (payload) =>{
+    return function (dispatch){
+        dispatch({
+            type:ORDERBY,
+            payload
+        })
+    }
+}
 
 export const filterBySpecie = (specie) =>{
     return function (dispatch){
@@ -9,9 +18,6 @@ export const filterBySpecie = (specie) =>{
         })
     }
 }
-
-
-
 export const getAllCharactersCopy = ()=>{
     return function (dispatch){
         axios.get("https://rickandmortyapi.com/api/character/")
@@ -37,6 +43,10 @@ export const getAllCharacters = (name=null)=>{
             })
         })
         .catch((error)=>{
+            dispatch({
+                type:ALL_CHARACTERS,
+                payload:error.message
+            })
             console.log(error)
         })
     }
