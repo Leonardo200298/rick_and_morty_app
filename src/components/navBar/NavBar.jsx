@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import FilterBySpecie from '../filterBySpecie/FilterBySpecie';
 import OrderBy from '../orderBy/OrderBy';
 
+
 export default function NavBar() {
   const dispatch = useDispatch();
   const handleRefresh = () => {
@@ -42,6 +43,7 @@ export default function NavBar() {
           <FilterBySpecie />
           <OrderBy/>
         </ul>
+          
       </nav>
     </div>
   )
