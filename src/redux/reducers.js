@@ -12,7 +12,7 @@ const reducer = (state = initialState, { type, payload }) => {
    console.log(state.allCharacters); */
   switch (type) {
     case ALL_CHARACTERS:
-      console.log(payload);
+      
       let error;
       if (payload === "Request failed with status code 404") {
         console.log("entre")

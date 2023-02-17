@@ -12,15 +12,16 @@ const charactersState = useSelector((state)=>{
     return state.allCharacters;
 })
 
-
+const error = useSelector((state) => {
+  return state.error;
+})
 useEffect(() => {
-    /* dispatch(getAllCharacters()); */
     dispatch(getAllCharactersCopy());
 }, []) 
   return (
     <div className={styles.fondo}>
       
-        {charactersState&&charactersState.map((elem)=>{
+        {error==="Request failed with status code 404"?<p className=''>No se ha encontrado un personaje con ese nombre</p>:charactersState.map((elem)=>{
           return (  <Cards 
           key={elem.id}
           name={elem.name}

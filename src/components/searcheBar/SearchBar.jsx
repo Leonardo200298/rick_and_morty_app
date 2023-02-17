@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getAllCharacters } from '../../redux/actions/actions';
 import Cards from "../Cards/Cards";
 
@@ -8,9 +8,7 @@ import Cards from "../Cards/Cards";
 export default function SearchBar() {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
-  const error = useSelector((state) => {
-    return state.error;
-  })
+ 
 
   useEffect(() => {
     handleSearch();
@@ -41,7 +39,7 @@ export default function SearchBar() {
       </button>
 
       <div>
-        <Cards />
+       <Cards />
 
 
       </div>
